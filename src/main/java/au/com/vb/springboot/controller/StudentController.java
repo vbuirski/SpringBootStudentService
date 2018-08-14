@@ -32,7 +32,7 @@ public class StudentController {
     if (course == null)
       return ResponseEntity.noContent().build();
 
-    URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(course.getId()).toUri();
+    URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(course.getId()).toUri();
 
     return ResponseEntity.created(location).build();
   }
